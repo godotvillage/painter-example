@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://jy1xk3q3chrp"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="MainLayout" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Navbar" type="HBoxContainer" parent="MarginContainer/MainLayout"]
+layout_mode = 2
+
+[node name="Toolbar" type="HBoxContainer" parent="MarginContainer/MainLayout/Navbar"]
+layout_mode = 2
+
+[node name="Pen" type="Button" parent="MarginContainer/MainLayout/Navbar/Toolbar"]
+layout_mode = 2
+text = "画笔"
+
+[node name="Eraser" type="Button" parent="MarginContainer/MainLayout/Navbar/Toolbar"]
+layout_mode = 2
+text = "橡皮"
+
+[node name="Colorbar" type="HBoxContainer" parent="MarginContainer/MainLayout/Navbar"]
+layout_mode = 2
+
+[node name="FrontColorContainer" type="VBoxContainer" parent="MarginContainer/MainLayout/Navbar/Colorbar"]
+layout_mode = 2
+
+[node name="FrontColor" type="ColorRect" parent="MarginContainer/MainLayout/Navbar/Colorbar/FrontColorContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MainLayout/Navbar/Colorbar/FrontColorContainer"]
+layout_mode = 2
+text = "前景色"
+
+[node name="BackColorContainer" type="VBoxContainer" parent="MarginContainer/MainLayout/Navbar/Colorbar"]
+layout_mode = 2
+
+[node name="BackColor" type="ColorRect" parent="MarginContainer/MainLayout/Navbar/Colorbar/BackColorContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MainLayout/Navbar/Colorbar/BackColorContainer"]
+layout_mode = 2
+text = "背景色"
+
+[node name="PaintBoard" type="Control" parent="MarginContainer/MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainLayout/PaintBoard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MainLayout/PaintBoard/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PaintLayers" type="Control" parent="MarginContainer/MainLayout/PaintBoard/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PaintLayer" type="TextureRect" parent="MarginContainer/MainLayout/PaintBoard/VBoxContainer/HBoxContainer/PaintLayers"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+
+[node name="VScrollBar" type="VScrollBar" parent="MarginContainer/MainLayout/PaintBoard/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HScrollBar" type="HScrollBar" parent="MarginContainer/MainLayout/PaintBoard/VBoxContainer"]
+layout_mode = 2
+
+[node name="BottomPanel" type="HBoxContainer" parent="MarginContainer/MainLayout"]
+layout_mode = 2
+
+[node name="Footbar" type="HBoxContainer" parent="MarginContainer/MainLayout"]
+layout_mode = 2
